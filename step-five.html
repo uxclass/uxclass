@@ -1,0 +1,722 @@
+	<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Private Placement Investment</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="icon" href="https://capiche.io/wp-content/uploads/2015/12/cropped-caphice_cube_512-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://capiche.io/wp-content/uploads/2015/12/cropped-caphice_cube_512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://capiche.io/wp-content/uploads/2015/12/cropped-caphice_cube_512-180x180.png" />
+<link rel="stylesheet" href="css/style.css">
+<style>
+/*
+  Please wrap your collapsible content in a single element or so help me
+  Must add a transition or it breaks because that's the whole purpose of this
+  Only one transition-duration works (see explanation on line #141 in JS)
+  You can add more to an inner wrapper (.details-styling)
+*/
+.collapse-init summary + * {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+}
+
+/*
+  Closed state. Any CSS transitions work here
+  The JS has a height calculation to make sliding opened/closed easier, but it's not necessary
+  Remove the height prop for a simple toggle on/off (after all that work I did for you?)
+*/
+.collapse-init :not(.panel-active) summary + * {
+  height: 0;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.collapse-init summary {
+  list-style: none;
+}
+.collapse-init summary::-webkit-details-marker {
+  display: none;
+}
+.collapse-init summary::before {
+  display: none;
+}
+.collapse-init summary {
+  cursor: pointer;
+}
+
+/*
+  This element exists so .details-wrapper has no extra margin/padding that can screw with the smooth height collapse
+  You can style .details-wrapper decoratively but avoid anything that modifies the box and add it to .details-styling instead
+  Otherwise, this element is totally optional. Remove if you hate divitis
+*/
+.details-styling {
+  padding: 1em;
+}
+
+
+
+
+code {
+  background: rgba(232, 125, 143, 0.1);
+  color: #e96384;
+}
+
+
+
+abbr {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-size: 1.2em;
+}
+
+[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+[type=checkbox] + label {
+  background: #efe7fd;
+  border-left: 4px solid #5b13ec;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  padding: 0.75em 1em;
+}
+[type=checkbox] + label::before {
+  border: 2px solid;
+  border-radius: 2px;
+  color: #5b13ec;
+  content: '';
+  display: inline-block;
+  margin-right: 0.75ch;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  width: 1ch;
+  height: 1ch;
+  vertical-align: baseline;
+}
+[type=checkbox]:focus + label {
+  outline: 2px solid #5b13ec;
+}
+[type=checkbox]:checked + label::before {
+  background: currentColor;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.container {
+  margin: 2.4em 0;
+}
+
+details {
+  background: #fff;
+  border: 1px solid #d6d1e0;
+  border-bottom: 0;
+  list-style: none;
+}
+details:first-child {
+  border-radius: 6px 6px 0 0;
+}
+details:last-child {
+  border-bottom: 1px solid #d6d1e0;
+  border-radius: 0 0 6px 6px;
+}
+
+summary {
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-weight: 700;
+  padding: 1em;
+}
+summary:focus {
+  outline: 2px solid #5b13ec;
+}
+.collapse-init summary::after {
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  content: '';
+  float: right;
+  width: 0.5em;
+  height: 0.5em;
+  margin-top: 0.25em;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+[open] summary {
+  background: #5b13ec;
+  color: #f8f5fe;
+}
+[open] summary::after {
+  margin-top: 0.5em;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+#accordion { width: 90% !important;}
+
+[open] summary {
+    background: #1e77ae;
+    color: #f8f5fe;
+}
+summary:focus {
+    outline: 2px solid #4baedc00;
+} 
+
+body {
+    font-size: 0.75rem;
+}
+
+.h4, h4 {
+    font-size: 1rem;
+}
+details {
+    background: #f7f7f7;
+    border: 1px solid #d6d1e0;
+    border-bottom: 0;
+    list-style: none;
+}
+ul li {
+    list-style-type: none !important;
+}
+.divider-vert[data-content]::after, .divider[data-content]::after {
+    background: #f7f7f7;
+    color: #bcc3ce;
+    content: attr(data-content);
+    display: inline-block;
+    font-size: .7rem;
+    padding: 0 .4rem;
+    transform: translateY(-.65rem);
+}
+.divider {
+    border-top: .05rem dashed #cdcdcd7d;
+    height: .05rem;
+    margin: .4rem 0;
+}
+strong {
+    font-family: taki-bold;
+}
+[open] summary {
+    background: #f0f0f0;
+    color: #000000;
+}
+.details-styling {
+    padding: 1em;
+    background-color: white;
+}
+.divider[data-content] {
+    margin: .8rem 0;
+    margin-top: 30px;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<!-- Start of Async Drift Code -->
+<script>
+    "use strict";
+    
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('6d2syyfsec64');
+    </script>
+    <!-- End of Async Drift Code -->
+</head>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+            <header class="navbar">
+                <section class="navbar-section">
+                  <a href="form.html" class="navbar-brand mr-2"><img class="main-image" src="logo.png"></a>
+           
+                </section>
+                <section class="navbar-section">
+                  <div class="input-group input-inline">
+           
+                    <a href="..." class="btn btn-link">View Full Offering Details</a>
+                    <a href="..." class="btn btn-link">Need to speak to a representative?</a>   
+                  </div>
+                </section>
+              </header> 
+              
+    <div class="columns col-oneline">
+       
+           
+                <div id="main-content" class="column col-8">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="#">Create a profile</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="#">Investor Information</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="#">Eligibility</a>
+                        </li>
+                     
+                      </ul>
+   
+                    <h4>What are the categories?  
+
+                      </h4>
+                    <p class="main-text-paragraph"><span class="">                          There are many different categories, the one's relevant for your this placement are listed here. <br>Please note that you only need to qualify for one of the categories.</span> </p>
+
+
+                      <div id="accordion"  class="container collapse ">
+                          <details>
+                            
+                            <summary>      
+                          Accredited Investor                                 </summary>
+                            <div class="details-wrapper">
+                              <div class="details-styling">        
+                                <p>You qualify as an Accredited Investor if you meet <strong>at least one </strong>of the following criteria.</p>
+                              <ul>
+
+                                <li>At least <strong>$1 million</strong>  in financial assets (cash and marketable securities) before taxes, <strong>net of any debts.</strong> Neither your home nor any other real estate you own are considered financial assets.</li>
+                                <div class="divider text-center" data-content="OR"></div>
+                                <li><strong>Net income</strong> before taxes of more than <strong> $200,000 </strong> consistently over the past two years (<strong>$300,000</strong> when combined with a <strong>spouse's net income</strong>).                                  </li>
+                                <div class="divider text-center" data-content="OR"></div>
+
+                                <li>Net assets of at least $5 million. Net assets exclude all liabilities.
+
+                                                   </li>
+
+                              </ul>                                        
+                                  
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary>Friends & Family, Business Associate                                    </summary>
+                            <div class="details-wrapper">
+                              <div class="details-styling">        
+                                <p>You qualify for this exception if you are a <strong>friend</strong> or <strong>family</strong> or <strong>business</strong> associate of a principal person.                                  </p>
+                                <p>Principal is either a <strong>director</strong>, <strong>executive officer</strong> or a <strong>major shareholder</strong> in the company. </p>
+                                <p>You qualify as a <strong>friend</strong> if you know a principal of the company for enough time to be able to judge the person’s capabilities and trustworthiness. The relationship must be <strong>a direct first-degree friendship,</strong> it is not enough to belong to the same organization, association or religious group.                                    </p>
+                                  <p>You qualify as <strong>family</strong> if you are a <strong>spouse, grandparent, sibling, child, grandchild or in-law </strong> of the principal. You don’t qualify as a family member if you are a cousin or anything other than what was listed. </p>
+                                  <p>You qualify as a <strong>business associate</strong> if you have had <strong>previous business</strong> dealings with a company principal to be able to judge the person’s capabilities and trustworthiness. You do not qualify if you were a customer, former client and definitely not simply a brief acquaintance.</p>
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary>Previous security holder exception                                     </summary>
+                            <div class="details-wrapper">   
+                              <div class="details-styling">        
+                                <p>You qualify for this exception if you have <strong>invested previously in this company</strong> and you actively securities in the company itself.</p>
+                              </div>
+                            </div>
+                          </details>
+
+                          
+                        </div>
+
+
+                      <!-- Paticipation Question -->
+
+<div class="form-group">
+    <label class="form-label">What category applies to you?
+      </label>
+    <label class="form-radio">
+      <input type="radio" name="gender" checked>
+      <i class="form-icon"></i>Accredited Investor
+
+    </label>
+    <label class="form-radio">
+      <input type="radio" name="gender">
+      <i class="form-icon"></i>Friends or Family or Business Associate
+    </label>
+    <label class="form-radio">
+        <input type="radio" name="gender">
+        <i class="form-icon"></i>Previous Security Holder
+      </label>
+  </div>
+
+
+
+ <a href="step-four.html"><button id="btn-back" class="btn">Back button</button> </a>
+
+  <a href="step-five.html">  <button id="btn-next" class="btn btn-primary">Next: What are the categories?</button></a>
+                        </div>
+                    <div id="main-page" class="column col-3">
+                        <div class="wrapper">
+                        
+                                <div id="sidebar" class="wizard">
+                                        <div class="v-line"></div>
+                                        <div id="active"  class="step">
+                                          <span>    Create a profile</span>
+                                          <img class="check" src="check.png">
+
+
+                                        </div>
+                                        <div id="active" class="step">
+                                          <span class="">Personal information</span>
+                                          <img class="check" src="check.png">
+
+                                        </div>
+                                        <div  id="active" class="step">
+                                            <span class="">Verify Eligibity    </span>
+                                        </div>
+                                        <div class="step">
+                                                <span class="temp">Select number of securities</span>
+                                              </div>
+                                      <div class="step">
+                                            <span class="temp">Review & Sign Documents</span>
+                                          </div>
+                                          <div class="step">
+                                                <span class="temp">View Payment Instructions</span>
+                                              </div>
+                                              <div class="step">
+                                                    <span class="temp">You're Done</span>
+                                                  </div>
+                                  </div>
+                    </div>
+                    </div>
+    
+                  </div>
+               
+                  
+                    
+              
+  </body>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg4rES-cHvkyowz2QjYSS1aQi1vBJaYYM&libraries=places&callback=initAutocomplete" async defer></script>
+    <script>
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+  
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          (document.getElementById('autocomplete')), {
+            types: ['geocode']
+          });
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+  
+      function fillInAddress() {
+        var place = autocomplete.getPlace();
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+  
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+
+ 
+<script>
+
+
+miscPolyfillsForIE();
+
+/*
+                      let accordion = new Collapse(element, { option: value}).init();
+                      
+                        Options - { option: defaultValue }
+                          accordion: false,
+                          initClass: 'collapse-init',
+                          activeClass: 'panel-active',
+                          heightClass: 'collapse-reading-height',
+                      
+                        Methods - accordion.method(panel)
+                          open(panel)
+                          close(panel)
+                          toggle(panel)
+                          openSinglePanel(panel) [AKA accordion mode]
+                          openAll()
+                          closeAll()
+                      
+                        Events - panel.addEventListener('event')
+                          openingPanel
+                          openedPanel
+                          closingPanel
+                          closedPanel
+                      */
+
+class Collapse {
+  constructor(container, options = {}) {
+    let defaults = {
+      accordion: false,
+      initClass: 'collapse-init',
+      activeClass: 'panel-active',
+      heightClass: 'collapse-reading-height' };
+
+
+    this.settings = Object.assign({}, defaults, options);
+
+    this._container = container;
+    this._panels = container.querySelectorAll("details");
+
+    this.events = {
+      openingPanel: new CustomEvent('openingPanel'),
+      openedPanel: new CustomEvent('openedPanel'),
+      closingPanel: new CustomEvent('closingPanel'),
+      closedPanel: new CustomEvent('closedPanel') };
+
+  }
+
+  // Sets height of panel content
+  _setPanelHeight(panel) {
+    let contents = panel.querySelector("summary + *");
+
+    contents.style.height = contents.scrollHeight + "px";
+  }
+
+  // Removes height of panel content
+  _removePanelHeight(panel) {
+    let contents = panel.querySelector("summary + *");
+
+    contents.style.height = null;
+  }
+
+  //=== Open panel
+  open(panel) {
+    panel.dispatchEvent(this.events.openingPanel);
+
+    panel.open = true;
+  }
+
+  // Add height and active class, this triggers opening animation
+  _afterOpen(panel) {
+    this._setPanelHeight(panel);
+    panel.classList.add(this.settings.activeClass);
+  }
+
+  // Remove height on animation end since it's no longer needed
+  _endOpen(panel) {
+    panel.dispatchEvent(this.events.openedPanel);
+
+    this._removePanelHeight(panel);
+  }
+
+  //=== Close panel, not toggling the actual [open] attr!
+  close(panel) {
+    panel.dispatchEvent(this.events.closingPanel);
+    this._afterClose(panel);
+  }
+
+  // Set height, wait a beat, then remove height to trigger closing animation
+  _afterClose(panel) {
+    this._setPanelHeight(panel);
+
+    setTimeout(() => {
+      panel.classList.remove(this.settings.activeClass);
+      this._removePanelHeight(panel);
+    }, 100); //help, this is buggy and hacky
+  }
+
+  // Actually closes panel once animation finishes
+  _endClose(panel) {
+    panel.dispatchEvent(this.events.closedPanel);
+
+    panel.open = false;
+  }
+
+  //=== Toggles panel... just in case anyone needs this
+  toggle(panel) {
+    panel.open ? this.close(panel) : this.open(panel);
+  }
+
+  //=== Accordion closes all panels except the current passed panel 
+  openSinglePanel(panel) {
+    this._panels.forEach(element => {
+      if (panel == element && !panel.open) {
+        this.open(element);
+      } else {
+        this.close(element);
+      }
+    });
+  }
+
+  //=== Opens all panels just because
+  openAll() {
+    this._panels.forEach(element => {
+      this.open(element);
+    });
+  }
+
+  //=== Closes all panels just in case
+  closeAll() {
+    this._panels.forEach(element => {
+      this.close(element);
+    });
+  }
+
+  // Now put it all together
+  _attachEvents() {
+    this._panels.forEach(panel => {
+      let toggler = panel.querySelector("summary");
+      let contents = panel.querySelector("summary + *");
+
+      // On panel open
+      panel.addEventListener("toggle", e => {
+        let isReadingHeight = panel.classList.contains(this.settings.heightClass);
+
+        if (panel.open && !isReadingHeight) {
+          this._afterOpen(panel);
+        }
+      });
+
+      toggler.addEventListener("click", e => {
+        // If accordion, stop default toggle behavior
+        if (this.settings.accordion) {
+          this.openSinglePanel(panel);
+          e.preventDefault();
+        }
+
+        // On attempting close, stop default close behavior to substitute our own
+        else if (panel.open) {
+            this.close(panel);
+            e.preventDefault();
+          }
+
+        // On open, proceed as normal (see toggle listener above)
+      });
+
+      /*
+            transitionend fires once for each animated property, 
+            but we want it to fire once for each click. 
+            So let's make sure to watch only a single property
+            Note this makes complex animations with multiple transition-durations impossible
+            Sorry
+          */
+      let propToWatch = '';
+
+      // On panel finishing open/close animation
+      contents.addEventListener("transitionend", e => {
+        // Ignore transitions from child elements
+        if (e.target !== contents) {
+          return;
+        }
+
+        // Set property to watch on first fire
+        if (!propToWatch) propToWatch = e.propertyName;
+
+        // If watched property matches currently animating property
+        if (e.propertyName == propToWatch) {
+          let wasOpened = panel.classList.contains(this.settings.activeClass);
+          wasOpened ? this._endOpen(panel) : this._endClose(panel);
+        }
+      });
+    });
+  }
+
+  init() {
+    // Attach functionality
+    this._attachEvents();
+
+    // If accordion, open the first panel
+    if (this.settings.accordion) {
+      this.openSinglePanel(this._panels[0]);
+    }
+
+    // For styling purposes
+    this._container.classList.add(this.settings.initClass);
+
+    return this;
+  }}
+
+
+let makeMePretty = document.querySelector(".collapse");
+let accordion = new Collapse(makeMePretty, { accordion: true }).init();
+
+// Toggle accordion behavior
+document.querySelector("#accordion-toggle").
+addEventListener("change", function () {
+  this.checked ?
+  accordion.settings.accordion = false :
+  accordion.settings.accordion = true;
+});
+
+// hoisthoistupwego I'm stuck on a machine with IE11
+function miscPolyfillsForIE() {
+  // NodeList.forEach() polyfill
+  // https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#Browser_Compatibility
+  if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+  }
+
+  // Object.assign() polyfill 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+  "function" != typeof Object.assign && Object.defineProperty(Object, "assign", { value: function (e, t) {"use strict";if (null == e) throw new TypeError("Cannot convert undefined or null to object");for (var n = Object(e), r = 1; r < arguments.length; r++) {if (window.CP.shouldStopExecution(0)) break;var o = arguments[r];if (null != o) for (var c in o) Object.prototype.hasOwnProperty.call(o, c) && (n[c] = o[c]);}window.CP.exitedLoop(0);return n;}, writable: !0, configurable: !0 });
+
+  // CustomEvent polyfill
+  // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent
+  !function () {if ("function" == typeof window.CustomEvent) return !1;function t(t, e) {e = e || { bubbles: !1, cancelable: !1, detail: void 0 };var n = document.createEvent("CustomEvent");return n.initCustomEvent(t, e.bubbles, e.cancelable, e.detail), n;}t.prototype = window.Event.prototype, window.CustomEvent = t;}();
+}
+</script>
+  </body>
+</html>
